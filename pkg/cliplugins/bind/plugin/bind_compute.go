@@ -86,6 +86,7 @@ func NewBindComputeOptions(streams genericclioptions.IOStreams) *BindComputeOpti
 func (o *BindComputeOptions) BindFlags(cmd *cobra.Command) {
 	o.Options.BindFlags(cmd)
 
+  // TODO
 	cmd.Flags().StringSliceVar(&o.APIExports, "apiexports", o.APIExports,
 		"APIExport to bind to this workspace for workload, each APIExport should be in the format of <absolute_ref_to_workspace>:<apiexport>")
 	cmd.Flags().StringVar(&o.NamespaceSelectorString, "namespace-selector", o.NamespaceSelectorString, "Label select to select namespaces to create workload.")

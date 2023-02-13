@@ -27,19 +27,21 @@ import (
 )
 
 var (
+  // TODO
 	bindExampleUses = `
 	# Create an APIBinding named "my-binding" that binds to the APIExport "my-export" in the "root:my-service" workspace.
 	%[1]s bind apiexport root:my-service:my-export --name my-binding
 	`
 
+  // TODO
 	bindComputeExampleUses = `
-    # Create a placement to deploy standard kubernetes workloads to synctargets in the "root:mylocations" location workspace.
+    # Create an APIBinding called "kubernetes" and a Placement to deploy standard kubernetes workloads to SyncTargets in the "root:mylocations" location workspace.
     %[1]s bind compute root:mylocations
 
-    # Create a placement to deploy custom workloads to synctargets in the "root:mylocations" location workspace.
+    # Create an APIBinding called "kubernetes" (including standard kubernetes workloads and custom APIs) and a Placement to deploy standard kubernetes workloads to SyncTargets in the "root:mylocations" location workspace.
     %[1]s bind compute root:mylocations --apiexports=root:myapis:customapiexport
 
-    # Create a placement to deploy standard kubernetes workloads to synctargets in the "root:mylocations" location workspace, and select only locations in the us-east region.
+    # Create an APIBinding called "kubernetes" and a Placement to deploy standard kubernetes workloads to SyncTargets in the "root:mylocations" location workspace, and select only Locations in the us-east region.
     %[1]s bind compute root:mylocations --location-selectors=region=us-east1
 	`
 )

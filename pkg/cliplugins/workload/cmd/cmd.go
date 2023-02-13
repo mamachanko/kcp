@@ -27,6 +27,7 @@ import (
 )
 
 var (
+  // TODO more examples
 	syncExample = `
 	# Ensure a syncer is running on the specified sync target.
 	%[1]s workload sync <sync-target-name> --syncer-image <kcp-syncer-image> -o syncer.yaml
